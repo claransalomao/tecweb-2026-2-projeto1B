@@ -24,6 +24,14 @@
       name="detalhes"
       placeholder="Digite o conteúdo..."
     >{{ note.content }}</textarea>
+    <input
+      class="form-card-title"
+      id="tag"
+      type="text"
+      name="tag"
+      placeholder="Tag (opcional)"
+      value="{{ note.tag.name }}"
+    />
     <div class="card-actions">
       <button class="btn" type="submit">Salvar</button>
       <a class="btn" href="{% url 'index' %}">Cancelar</a>
