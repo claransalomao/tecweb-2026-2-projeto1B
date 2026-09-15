@@ -35,6 +35,13 @@
       <div class="card-content">
         <p>{{ note.content }}</p>
       </div>
+      <div class="card-actions">
+        <a class="btn" href="{% url 'edit_note' note.id %}">Editar</a>
+        <form method="post" action="{% url 'delete_note' note.id %}">
+          {% csrf_token %}
+          <button class="btn" type="submit">Excluir</button>
+        </form>
+      </div>
     </div>
     {% endfor %}
   </div>
