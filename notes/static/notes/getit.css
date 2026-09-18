@@ -229,6 +229,45 @@ body {
   background-color: #abe9c1;
 }
 
+.tag-table {
+  width: 500px;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.tag-table th,
+.tag-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ead3a7;
+}
+
+.tag-table th {
+  background-color: #f7d736;
+  color: #2c2c2c;
+}
+
+.tag-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tag-table tbody tr:hover {
+  background-color: #fae890;
+}
+
+.tag-link {
+  color: #2c2c2c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tag-link:hover {
+  text-decoration: underline;
+}
+
 .card-rotation-1  { transform: rotate(-5deg); }
 .card-rotation-2  { transform: rotate(-4deg); }
 .card-rotation-3  { transform: rotate(-3deg); }

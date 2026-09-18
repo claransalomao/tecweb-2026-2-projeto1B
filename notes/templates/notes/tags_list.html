@@ -9,16 +9,25 @@
 </div>
 
 <main class="container">
-  <div class="card-container">
-    {% for tag in tags %}
-    <a class="card" href="{% url 'tag_detail' tag.id %}">
-      <div class="card-header">
-        <h3 class="card-title">#{{ tag.name }}</h3>
-      </div>
-    </a>
-    {% empty %}
-    <p>Nenhuma tag cadastrada ainda.</p>
-    {% endfor %}
-  </div>
+  <table class="tag-table">
+    <thead>
+      <tr>
+        <th>Tag</th>
+        <th>Notas</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tag in tags %}
+      <tr>
+        <td><a class="tag-link" href="{% url 'tag_detail' tag.id %}">#{{ tag.name }}</a></td>
+        <td>{{ tag.notes.count }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="2">Nenhuma tag cadastrada ainda.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </main>
 {% endblock %}
