@@ -26,10 +26,10 @@
     ></textarea>
     <input
       class="form-card-title"
-      id="tag"
+      id="tags"
       type="text"
-      name="tag"
-      placeholder="Tag (opcional)"
+      name="tags"
+      placeholder="Tags separadas por vírgula (opcional)"
     />
     <button class="btn" type="submit">Criar</button>
   </form>
@@ -42,8 +42,12 @@
       </div>
       <div class="card-content">
         <p>{{ note.content }}</p>
-        {% if note.tag %}
-        <p><a href="{% url 'tag_detail' note.tag.id %}">#{{ note.tag.name }}</a></p>
+        {% if note.tags.all %}
+        <p>
+          {% for tag in note.tags.all %}
+          <a href="{% url 'tag_detail' tag.id %}">#{{ tag.name }}</a>{% if not forloop.last %}&nbsp;{% endif %}
+          {% endfor %}
+        </p>
         {% endif %}
       </div>
       <div class="card-actions">

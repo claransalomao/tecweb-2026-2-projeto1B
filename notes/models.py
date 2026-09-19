@@ -11,6 +11,6 @@ class Tag(models.Model):
 class Note(models.Model):
     title = models.CharField(max_length=200)
     content= models.TextField(null=True)
-    tag = models.ForeignKey(Tag, null=True, blank=True, on_delete=models.SET_NULL, related_name='notes')
+    tags = models.ManyToManyField(Tag, blank=True, related_name='notes')
     def __str__(self):
         return f"{self.id}. {self.title}"

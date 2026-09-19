@@ -26,11 +26,11 @@
     >{{ note.content }}</textarea>
     <input
       class="form-card-title"
-      id="tag"
+      id="tags"
       type="text"
-      name="tag"
-      placeholder="Tag (opcional)"
-      value="{{ note.tag.name }}"
+      name="tags"
+      placeholder="Tags separadas por vírgula (opcional)"
+      value="{{ tags_text }}"
     />
     <div class="card-actions">
       <button class="btn" type="submit">Salvar</button>
